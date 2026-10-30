@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===================== SEO — GANTI SEMUA DI BAWAH INI ===================== -->
+    <title>Vizar Benarly | Full Stack Developer &amp; AI Engineer</title>
+    <meta name="description" content="Portfolio of Vizar Benarly - Full Stack Developer specializing in React, Node.js, and AI-driven products." />
+    <meta name="keywords" content="portfolio, full stack developer, react developer, Vizar" />
+    <meta name="author" content="Muhammad Vizar Benarly" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f5f5f5" />
+    <link rel="canonical" href="https://your-domain.com/" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vizar Benarly | Full Stack Developer & AI Engineer" />
+    <meta property="og:description" content="Portfolio of Vizar Benarly - Full Stack Developer specializing in React, Node.js, and AI-driven products." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Muhammad Vizar Benarly",
+        "url": "https://your-domain.com/",
+        "jobTitle": "Full Stack Developer & AI Engineer",
+        "sameAs": ["https://github.com/Vizar-IT", "https://instagram.com/vizarlyy"]
+      }
+    </script>
+    <!-- ========================================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <script>
+      const SITE_CONFIG = {
+        formspreeId: "", // GANTI dengan ID Formspree (https://formspree.io) — kosong = mode demo
+      };
+    </script>
+    <!-- ======================================================================= -->
+
+    <!-- =========================== PRELOADER =========================== -->
+    <div id="preloader" aria-hidden="true">
+      <canvas id="preloader-canvas"></canvas>
+      <div class="preloader__panel mono">
+        <span class="preloader__line" data-step="5">[ INITIALIZING_SYSTEM_CORE ]</span>
+        <span class="preloader__line" data-step="27">SYS_VER: 1.0.4</span>
+        <span class="preloader__line" data-step="49">AUTH: VERIFIED</span>
+        <span class="preloader__line" data-step="71">SYS_ONLINE</span>
+        <span class="preloader__status">LOADING <span id="preloader-percent">000</span>%</span>
+        <div class="preloader__bar"><div id="preloader-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- ===================== BACKGROUND / CURSOR FX ===================== -->
+    <canvas id="dot-grid" aria-hidden="true"></canvas>
+    <canvas id="cursor-trail" aria-hidden="true"></canvas>
+
+    <!-- ============================== NAV =============================== -->
+    <header id="site-header">
+      <div class="container header__inner">
+        <!-- GANTI: inisial/nama singkat di logo -->
+        <a href="#hero" class="logo mono">Vizar<span>_</span></a>
+
+        <nav class="nav" aria-label="Primary">
+          <!-- GANTI: menu navigasi (teks | tautan #bagian) -->
+          <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#projects" class="nav-link">Work</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header__actions">
+          <button id="sound-toggle" class="chip-btn" type="button" aria-pressed="false">Sound On</button>
+          <button id="menu-toggle" class="nav-link nav-link--btn" type="button" aria-expanded="false" aria-controls="mobile-menu">[ Menu ]</button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="mobile-menu">
+        <nav class="container" aria-label="Mobile">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#projects" class="nav-link">Work</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============================== HERO ============================== -->
+      <section id="hero" class="hero">
+        <div class="hero__bg"><canvas id="matrix-rain"></canvas></div>
+
+        <div class="container hero__inner">
+          <div class="hero__top mono">
+            <span>// portfolio.html</span>
+            <!-- GANTI: lokasi & zona waktu -->
+            <span>Bogor, Indonesia</span>
+          </div>
+
+          <!-- GANTI: jabatan/role -->
+          <p class="eyebrow" data-reveal>Full Stack Developer &amp; AI Engineer</p>
+
+          <!-- GANTI: NAMA ANDA (dua baris) -->
+          <h1 class="hero__name display" data-reveal>
+            <span class="glitch" data-text="Vizar">Vizar</span><br />
+            <span class="hero__name-last">Benarly</span><span>.</span>
+          </h1>
+
+          <!-- GANTI: peran yang berputar di typewriter (pisahkan dengan |) -->
+          <p class="hero__role mono" data-reveal data-roles="Backend Developer|Frontend Developer|Creative Coder">
+            &lt; role /&gt; <span id="typewriter"></span><span class="caret">_</span>
+          </p>
+
+          <!-- GANTI: chip teknologi (hapus/tambah sesuai keinginan) -->
+          <div class="hero__chips" data-reveal>
+            <span class="chip">Web Developer</span>
+            <!-- <span class="chip">Game Developer</span> -->
+            <span class="chip">Flutter</span>
+            <span class="chip">Figma</span>
+
+          </div>
+
+          <div class="hero__cta" data-reveal>
+            <button class="btn magnetic" id="open-resume" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              View Resume
+            </button>
+            <a class="btn btn--ghost magnetic" href="resume.pdf" download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+              Download
+            </a>
+          </div>
+
+          <!-- GANTI: tautan media sosial (hapus yang tidak dipakai) -->
+          <div class="hero__socials" data-reveal>
+            <a class="icon-btn" href="https://github.com/Vizar-IT" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">GH</a>
+            <!-- <a class="icon-btn" href="https://linkedin.com/in/your-profile" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">IN</a> -->
+            <a class="icon-btn" href="https://www.instagram.com/vizarlyy/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">IG</a>
+            <!-- <a class="icon-btn" href="https://x.com/your-handle" target="_blank" rel="noreferrer" aria-label="X" title="X">X</a> -->
+            <a class="icon-btn" href="https://your-blog.com" target="_blank" rel="noreferrer" aria-label="Blog" title="Blog">BL</a>
+            <a class="icon-btn" href="mailto:vizarbenarlyw@gmail.com" aria-label="Email" title="Email">@</a>
+          </div>
+
+          <div class="hero__notes mono" data-reveal>
+            <span>// portfolio.html</span>
+            <span>// version: 2.0.0</span>
+            <span>// status: production</span>
+            <span>const passion = Infinity;</span>
+          </div>
+
+          <div class="hero__bottom" data-reveal>
+            <span class="mono">scroll to read — pinch to zoom</span>
+            <a href="#about" class="scroll-hint" aria-label="Scroll to about">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
+            </a>
+            <span class="mono">// status: production</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== ABOUT ============================= -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow" data-reveal>01 — Introduction</span>
+              <h2 class="section-title" data-scramble data-reveal>About me</h2>
+            </div>
+            <span class="mono" data-reveal>// a quick snapshot</span>
+          </div>
+
+          <div class="about__grid">
+            <div class="about__aside">
+              <!-- GANTI: kartu avatar (isi gambar Anda: <img src="assets/profile.png" alt="">) -->
+              <div class="card avatar-card" data-reveal>
+                <div class="avatar-card__img"><img src="assets/profile.png" alt="Muhammad Vizar Benarly" /></div>
+                <span class="avatar-card__tag mono">profile.png</span>
+              </div>
+
+              <!-- GANTI: data di ID card -->
+              <div class="card id-card mono" data-reveal>
+                <p class="id-card__title">ID_CARD</p>
+                <p><span>NAME:</span> <strong>Muhammad Vizar Benarly</strong></p>
+                <p><span>ROLE:</span> <strong>Full Stack Developer</strong></p>
+                <p><span>LOC:</span> <strong>Bogor, Indonesia</strong></p>
+                <p><span>GITHUB:</span> <strong>Vizar-IT</strong></p>
+                <p><span>STATUS:</span> <strong>AVAILABLE_FOR_PROJECTS</strong></p>
+              </div>
+            </div>
+
+            <div class="about__body">
+              <!-- GANTI: paragraf tentang diri Anda -->
+              <p class="body-text" data-reveal>Saya <strong>Muhammad Vizar Benarly</strong>, seorang <strong>pelajar</strong> yang tertarik pada dunia teknologi dan pengembangan aplikasi.</p>
+              <p class="body-text" data-reveal>Saya sedang mempelajari <strong>web development</strong> menggunakan HTML, CSS, JavaScript, PHP, dan Laravel. Saya juga pernah mengembangkan <strong>aplikasi mobile</strong> menggunakan Flutter dan Dart, serta membuat beberapa project <strong>game</strong> menggunakan Scratch, PictoBlox, dan Construct 3..</p>
+              <p class="body-text" data-reveal>Melalui berbagai project yang saya kerjakan, <strong>saya terus belajar</strong> untuk meningkatkan kemampuan dalam programming, desain antarmuka, dan pengembangan aplikasi. Saya senang <strong>mencoba hal-hal baru</strong> dan mengubah ide sederhana menjadi sebuah project yang dapat digunakan.</p>
+
+              <!-- GANTI: angka statistik -->
+              <div class="stats" data-reveal>
+                <div class="card stat"><strong class="display">5+</strong><span>Technology</span></div>
+                <div class="card stat"><strong class="display">10+</strong><span>Projects Completed</span></div>
+                <div class="card stat"><strong class="display">100%</strong><span>Learning</span></div>
+              </div>
+
+              <a class="btn" href="" target="_blank" rel="noreferrer" data-reveal>Read My Technical Blog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ EDUCATION =========================== -->
+      <section id="education" class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow" data-reveal>02 — Academics</span>
+              <h2 class="section-title" data-scramble data-reveal>Education</h2>
+            </div>
+            <span class="mono" data-reveal>// where it started</span>
+          </div>
+
+          <!-- GANTI: daftar pendidikan (duplikat/hapus blok <li>) -->
+          <ol class="timeline">
+            <li class="card timeline__item" data-reveal>
+              <div class="timeline__head">
+                <div>
+                  <h3>Pemrograman Perangkat Lunak dan Gim (PPLG)</h3>
+                  <p>SMK AK NUSA BANGSA — INDONESIA</p>
+                </div>
+                <span class="chip">2024 — 2027</span>
+              </div>
+              <ul>
+                <li>Specialization: Software Engineering</li>
+                <!-- <li>CGPA: 9.0 / 10</li> -->
+              </ul>
+            </li>
+
+            <!-- <li class="card timeline__item" data-reveal>
+              <div class="timeline__head">
+                <div>
+                  <h3>B.Sc Computer Science</h3>
+                  <p>Your College — Your Country</p>
+                </div>
+                <span class="chip">2021 — 2024</span>
+              </div>
+              <ul>
+                <li>Mathematics, Statistics &amp; Computer Science</li>
+              </ul>
+            </li> -->
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================ PROJECTS ============================ -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow" data-reveal>03 — Selected work</span>
+              <h2 class="section-title" data-scramble data-reveal>Projects</h2>
+            </div>
+            <span class="mono" data-reveal>// 3 total builds</span>
+          </div>
+
+          <!-- GANTI: tab filter -->
+          <div class="filters" role="tablist" aria-label="Project filters" data-reveal>
+            <button class="filter is-active" role="tab" aria-selected="true" data-filter="All" type="button">All</button>
+            <button class="filter" role="tab" aria-selected="false" data-filter="Web" type="button">Web</button>
+            <button class="filter" role="tab" aria-selected="false" data-filter="Mobile" type="button">Mobile</button>
+            <button class="filter" role="tab" aria-selected="false" data-filter="E-Commerce" type="button">E-Commerce</button>
+            <button class="filter" role="tab" aria-selected="false" data-filter="Game" type="button">Game</button>
+          </div>
+
+          <!--
+            GANTI: daftar proyek — duplikat satu blok <article class="project-card"> untuk proyek baru.
+            data-category harus cocok dengan salah satu tab filter (All/Web/Mobile/E-Commerce/Game)
+          -->
+
+          <!-- ===== TEMPLATE KARTU PROYEK =====
+          Duplikat blok <article> di bawah, hapus tanda komentar, lalu isi datanya.
+          <article class="project-card card" data-category="Mobile" data-source="https://github.com/Vizar-IT/NAMA-REPO" data-live="https://link-live-demo" data-reveal>
+            <div class="scanline"></div>
+            <div class="project-card__head">
+              <div class="project-card__tags">
+                <span class="chip">Mobile</span>
+                <span class="badge-new">New</span>
+              </div>
+              <span class="project-card__num display" data-parallax>06</span>
+            </div>
+            <div class="project-card__body">
+              <h3>JUDUL PROYEK</h3>
+              <p class="mono project-card__tagline">Satu kalimat ringkas soal proyek ini.</p>
+              <p class="body-text">Deskripsi 1-2 kalimat: fitur utama / masalah yang diselesaikan.</p>
+              <div class="tech-tags"><span>Tech1</span><span>Tech2</span></div>
+            </div>
+            <span class="zone-badge" aria-hidden="true"></span>
+            <span class="project-card__hint mono">// source | live</span>
+            <div class="project-card__mobile">
+              <a class="btn btn--ghost btn--sm" href="https://github.com/Vizar-IT/NAMA-REPO" target="_blank" rel="noreferrer">Source</a>
+              <a class="btn btn--sm" href="https://link-live-demo" target="_blank" rel="noreferrer">Live Demo</a>
+            </div>
+          </article>
+          CATATAN:
+          - data-category harus salah satu dari tab filter yang ada (ubah tab di atas bila perlu).
+          - Nomor (01, 02, ...) urutkan sesuai posisi kartu.
+          - Kalau proyek belum punya live demo: hapus data-live, hapus baris tombol Live Demo,
+            dan ganti teks hint jadi "// source".
+          =====
+          -->
+          <div class="projects__grid">
+            <article class="project-card card" data-category="Mobile" data-source="https://github.com/Vizar-IT/-FLUTTER---Manajemen-Data-Siswa" data-img="assets/projects/manajemen-data-siswa.png" data-reveal>
+              <div class="scanline"></div>
+              <div class="project-card__head">
+                <div class="project-card__tags">
+                  <span class="chip">Mobile</span>
+                  <span class="badge-new">New</span>
+                </div>
+                <span class="project-card__num display" data-parallax>01</span>
+              </div>
+              <div class="project-card__body">
+                <h3>Management Student Data</h3>
+                <p class="mono project-card__tagline">Flutter app for managing student records.</p>
+                <p class="body-text">Mobile application built with Flutter to record, update and manage student data.</p>
+                <div class="tech-tags"><span>Flutter</span><span>Dart</span></div>
+              </div>
+              <span class="zone-badge" aria-hidden="true"></span>
+              <div class="project-card__links">
+                <a href="https://github.com/Vizar-IT/-FLUTTER---Manajemen-Data-Siswa" target="_blank" rel="noreferrer" aria-label="Source code — Manajemen Data Siswa" title="Source Code">
+                  <svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+              </div>
+              <span class="project-card__hint mono">// view details</span>
+              <div class="project-card__mobile">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/Vizar-IT/-FLUTTER---Manajemen-Data-Siswa" target="_blank" rel="noreferrer">Source</a>
+              </div>
+            </article>
+
+            <article class="project-card card" data-category="Web" data-source="https://github.com/daffa-html/healthyweb" data-live="https://healthyweb-lake.vercel.app" data-img="assets/projects/healthyweb.png" data-reveal>
+              <div class="scanline"></div>
+              <div class="project-card__head">
+                <div class="project-card__tags">
+                  <span class="chip">Web</span>
+                  <span class="badge-flat">Team Project</span>
+                </div>
+                <span class="project-card__num display" data-parallax>02</span>
+              </div>
+              <div class="project-card__body">
+                <h3>HealthyWeb</h3>
+                <p class="mono project-card__tagline">Diabetes education portal for teenagers.</p>
+                <p class="body-text">Weblomba competition entry — early diabetes education, a daily sugar intake calculator, and an interactive nutrition game.</p>
+                <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+              <span class="zone-badge" aria-hidden="true"></span>
+              <div class="project-card__links">
+                <a href="https://github.com/daffa-html/healthyweb" target="_blank" rel="noreferrer" aria-label="Source code — HealthyWeb" title="Source Code">
+                  <svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://healthyweb-lake.vercel.app" target="_blank" rel="noreferrer" aria-label="Live demo — HealthyWeb" title="Live Demo">
+                  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </a>
+              </div>
+              <span class="project-card__hint mono">// view details</span>
+              <div class="project-card__mobile">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/daffa-html/healthyweb" target="_blank" rel="noreferrer">Source</a>
+                <a class="btn btn--sm" href="https://healthyweb-lake.vercel.app" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </article>
+
+            <article class="project-card card" data-category="Web" data-source="https://github.com/Vizar-IT/V-Coworking-Space" data-reveal>
+              <div class="scanline"></div>
+              <div class="project-card__head">
+                <div class="project-card__tags">
+                  <span class="chip">Web</span>
+                </div>
+                <span class="project-card__num display" data-parallax>03</span>
+              </div>
+              <div class="project-card__body">
+                <h3>V-Coworking Space</h3>
+                <p class="mono project-card__tagline">Coworking space management built with Laravel.</p>
+                <p class="body-text">Web app for managing shared workspaces — from room and member records to booking.</p>
+                <div class="tech-tags"><span>Laravel</span><span>PHP</span><span>MySQL</span></div>
+              </div>
+              <span class="zone-badge" aria-hidden="true"></span>
+              <div class="project-card__links">
+                <a href="https://github.com/Vizar-IT/V-Coworking-Space" target="_blank" rel="noreferrer" aria-label="Source code — V-Coworking Space" title="Source Code">
+                  <svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+              </div>
+              <span class="project-card__hint mono">// view details</span>
+              <div class="project-card__mobile">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/Vizar-IT/V-Coworking-Space" target="_blank" rel="noreferrer">Source</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= SKILLS ============================= -->
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow" data-reveal>04 — Toolkit</span>
+              <h2 class="section-title" data-scramble data-reveal>Technical Arsenal</h2>
+            </div>
+            <span class="mono" data-reveal>// always sharpening</span>
+          </div>
+
+          <!-- GANTI: daftar skill (duplikat/hapus blok .skill-group) -->
+          <div class="skills__grid">
+            <div class="card skill-group" data-reveal>
+              <h3>Frontend Development</h3>
+              <div class="skill-group__items">
+                <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="card skill-group" data-reveal>
+              <h3>Mobile Development</h3>
+              <div class="skill-group__items">
+                <span class="chip">Flutter</span><span class="chip">Dart</span>
+              </div>
+            </div>
+            <div class="card skill-group" data-reveal>
+              <h3>Backend &amp; Database</h3>
+              <div class="skill-group__items">
+                <span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">MySQL</span>
+              </div>
+            </div>
+            <div class="card skill-group" data-reveal>
+              <h3>Game Development</h3>
+              <div class="skill-group__items">
+                <span class="chip">Construct 3</span><span class="chip">Scratch</span><span class="chip">Pictoblox</span>
+              </div>
+            </div>
+            <div class="card skill-group" data-reveal>
+              <h3>Tools &amp; Ecosystem</h3>
+              <div class="skill-group__items">
+                <span class="chip">Git</span><span class="chip">Github</span><span class="chip">Figma</span><span class="chip">Filament</span><span class="chip">VS Code</span>
+              </div>
+            </div>
+            <div class="skill-group skill-group--dashed" data-reveal>
+              <p class="mono">// Always Learning...</p>
+              <div class="skill-group__items">
+                <span class="chip chip--dashed"></span><span class="chip chip--dashed"></span><span class="chip chip--dashed"></span><span class="chip chip--dashed"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pulse-divider" data-reveal>
+            <span class="pulse-dot"></span><span class="eyebrow">Live Pulse</span><hr />
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================= CONTACT ============================ -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow" data-reveal>05 — Contact</span>
+              <h2 class="section-title" data-scramble data-reveal>Get in touch</h2>
+            </div>
+            <span class="chip" data-reveal><span class="pulse-dot pulse-dot--green"></span>AVAILABLE_FOR_PROJECTS</span>
+          </div>
+
+          <div class="contact__grid">
+            <div data-reveal>
+              <!-- GANTI: kalimat pembuka -->
+              <h3 class="contact__headline">Have a project in mind? Let's make it happen.</h3>
+              <p class="body-text">I am currently available for freelance and full-time opportunities. Drop me a message and I usually reply within 24 hours.</p>
+
+              <!-- GANTI: email Anda -->
+              <button class="card email-card" id="copy-email" type="button" data-email="vizarbenarlyw@gmail.com">
+                <span>
+                  <span class="eyebrow">Email</span>
+                  <span class="mono email-card__value">vizarbenarlyw@gmail.com</span>
+                </span>
+                <span id="copy-icon" class="email-card__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </span>
+              </button>
+
+              <p class="eyebrow connect-label">Connect</p>
+              <!-- GANTI: ulangi tautan sosial seperti di hero -->
+              <div class="hero__socials">
+                <a class="icon-btn icon-btn--lg" href="https://github.com/Vizar-IT" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+                <!-- <a class="icon-btn icon-btn--lg" href="https://linkedin.com/in/your-profile" target="_blank" rel="noreferrer" aria-label="LinkedIn">IN</a> -->
+                <!-- <a class="icon-btn icon-btn--lg" href="https://x.com/your-handle" target="_blank" rel="noreferrer" aria-label="X">X</a> -->
+                <a class="icon-btn icon-btn--lg" href="https://instagram.com/vizarlyy" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+                <a class="icon-btn icon-btn--lg" href="mailto:vizarbenarlyw@gmail.com" aria-label="Email">@</a>
+              </div>
+            </div>
+
+            <div class="card contact__form-card" data-reveal>
+              <form id="contact-form" novalidate>
+                <label class="field">
+                  <span class="eyebrow">Your Name</span>
+                  <input type="text" name="name" placeholder="Vizar" autocomplete="name" />
+                  <span class="field__error" data-error-for="name"></span>
+                </label>
+                <label class="field">
+                  <span class="eyebrow">Email Address</span>
+                  <input type="email" name="email" placeholder="vizarbenarlyw@example.com" autocomplete="email" />
+                  <span class="field__error" data-error-for="email"></span>
+                </label>
+                <label class="field">
+                  <span class="eyebrow">Message</span>
+                  <textarea name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                  <span class="field__error" data-error-for="message"></span>
+                </label>
+                <button class="btn btn--full" id="form-submit" type="submit">Send Message</button>
+                <p class="mono form-note">// replies within 24h</p>
+              </form>
+
+              <div id="form-success" class="form-success" hidden>
+                <span class="form-success__check">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <h4>Message Received!</h4>
+                <p class="body-text">Thanks for reaching out — I will get back to you soon.</p>
+                <p class="mono form-success__note" hidden>// demo mode — add a Formspree ID in index.html</p>
+                <button class="btn btn--ghost" id="form-retry" type="button">Send Another Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= FINALE ============================= -->
+      <section id="finale" class="finale">
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span>AVAILABLE FOR WORK — OPEN TO COLLABORATION — LET'S TALK — </span><span>AVAILABLE FOR WORK — OPEN TO COLLABORATION — LET'S TALK — </span>
+          </div>
+        </div>
+
+        <div class="container finale__inner">
+          <span class="finale__watermark display" aria-hidden="true">THANK YOU</span>
+          <h2 class="finale__title display" data-reveal>
+            Let's build something <u>unforgettable</u> together.
+          </h2>
+          <div class="finale__pill" data-reveal>
+            <span class="pill"><span class="pulse-dot pulse-dot--green"></span>Available for Freelance Projects</span>
+          </div>
+
+          <!-- GANTI: tautan sosial finale -->
+          <div class="finale__links" data-reveal>
+            <a class="card finale__link" href="https://github.com/Vizar-IT" target="_blank" rel="noreferrer"><span>GitHub</span><b>↗</b></a>
+            <!-- <a class="card finale__link" href="https://linkedin.com/in/your-profile" target="_blank" rel="noreferrer"><span>LinkedIn</span><b>↗</b></a> -->
+            <!-- <a class="card finale__link" href="https://x.com/your-handle" target="_blank" rel="noreferrer"><span>X</span><b>↗</b></a> -->
+            <a class="card finale__link" href="https://instagram.com/vizarlyy" target="_blank" rel="noreferrer"><span>Instagram</span><b>↗</b></a>
+            <a class="card finale__link" href="https://your-blog.com" target="_blank" rel="noreferrer"><span>Blog</span><b>↗</b></a>
+            <a class="btn finale__link finale__link--cta" href="#contact"><span>Let's talk</span><b>↗</b></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================== FOOTER ============================= -->
+    <footer id="footer">
+      <div class="container footer__inner">
+        <p class="mono">© <span id="year"></span> Muhammad Vizar Benarly. All rights reserved.</p>
+        <p class="mono">Driving Digital Innovation &amp; Building Scalable Tech Products</p>
+        <a href="#hero" class="nav-link">Back to top</a>
+      </div>
+    </footer>
+
+    <!-- ========================== RESUME MODAL =========================== -->
+    <div id="resume-modal" class="modal" hidden>
+      <div class="modal__window" role="dialog" aria-modal="true" aria-label="Resume preview">
+        <div class="modal__bar">
+          <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+          <span class="modal__title mono">resume.pdf — preview</span>
+          <button class="modal__close" id="resume-close" type="button" aria-label="Close resume">✕</button>
+        </div>
+        <div class="modal__body">
+          <iframe src="resume.pdf" title="Resume preview" hidden></iframe>
+          <div class="modal__fallback mono">
+            <p id="fallback-title">Loading resume...</p>
+            <p class="modal__hint">Add your file at <code>resume.pdf</code> to enable preview.</p>
+          </div>
+        </div>
+        <div class="modal__actions">
+          <a class="btn" href="resume.pdf" download>Download</a>
+          <a class="btn btn--ghost" href="resume.pdf" target="_blank" rel="noreferrer">Open in new tab</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== PROJECT MODAL =========================== -->
+    <div id="project-modal" class="modal" hidden>
+      <div class="modal__window" role="dialog" aria-modal="true" aria-label="Project detail">
+        <div class="modal__bar">
+          <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+          <span class="modal__title mono" id="project-modal-title">project — detail</span>
+          <button class="modal__close" id="project-close" type="button" aria-label="Close project detail">✕</button>
+        </div>
+        <div class="modal__body project-modal__body">
+          <div class="project-modal__content" id="project-modal-content"></div>
+        </div>
+        <div class="modal__actions" id="project-modal-actions"></div>
+      </div>
+    </div>
+
+    <!-- ======================== SCROLL TOP + TOAST ======================= -->
+    <button id="scroll-top" type="button" aria-label="Scroll to top" title="Back to top">
+      <svg width="48" height="48" viewBox="0 0 48 48">
+        <circle class="scroll-top__track" cx="24" cy="24" r="21" />
+        <circle id="scroll-progress" class="scroll-top__progress" cx="24" cy="24" r="21" />
+        <path d="M24 30V18M18 24l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" />
+      </svg>
+      <span class="scroll-top__pct mono" id="scroll-percent">0%</span>
+    </button>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
